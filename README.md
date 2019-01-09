@@ -15,3 +15,6 @@
 
 # CLD
 ![Alt-Text](./images/CLD.png)
+
+# ERD
+![Alt-Text](./images/ERD.png)
