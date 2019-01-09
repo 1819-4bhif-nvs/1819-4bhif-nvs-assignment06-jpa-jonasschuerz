@@ -18,3 +18,5 @@
 
 # ERD
 ![Alt-Text](./images/ERD.png)
+
+In diesem Program geht es darum zu dokumentieren wie viele Personen bei einem Einsatz dabei waren und welche Kraftfahrzeuge verwendet wurden. 
