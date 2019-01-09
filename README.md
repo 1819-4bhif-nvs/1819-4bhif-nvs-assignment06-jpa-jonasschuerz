@@ -10,3 +10,8 @@
 - Ein Datum muss in Ihrem REST-Endpoint
 - Verwenden Sie eine DerbyDb sowie eine H2
 - Erstellen Systemtests auf Basis JavaSE.
+
+
+
+# CLD
+![Alt-Text](./images/CLD.png)
