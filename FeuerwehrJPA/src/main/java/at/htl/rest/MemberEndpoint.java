@@ -17,8 +17,9 @@ public class MemberEndpoint {
     @PersistenceContext
     EntityManager em;
 
-    @Path("findAll")
     @GET
+    @Path("findAll")
+    @Produces(MediaType.APPLICATION_JSON)
     public Response findAll() {
         TypedQuery<Member> query = em.createNamedQuery("Member.findAll", Member.class);
         List<Member> members = query.getResultList();
@@ -27,6 +28,7 @@ public class MemberEndpoint {
 
     @GET
     @Path("{id}")
+    @Produces(MediaType.APPLICATION_JSON)
     public Response findById(@PathParam("id") long id) {
         Member member = em.find(Member.class, id);
         if (member == null) {
@@ -36,7 +38,7 @@ public class MemberEndpoint {
     }
 
     @DELETE
-    @Path("{id}")
+    @Path("/deleteMember/{id}")
     public Response deleteById(@PathParam("id") long id) {
         Member member = em.find(Member.class, id);
         if (member == null) {

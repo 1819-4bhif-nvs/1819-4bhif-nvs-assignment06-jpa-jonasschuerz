@@ -9,6 +9,7 @@ import javax.persistence.TypedQuery;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import javax.xml.bind.annotation.XmlRootElement;
 import java.util.List;
 
 @Path("operation")
@@ -17,8 +18,9 @@ public class OperationEndpoint {
     @PersistenceContext
     EntityManager em;
 
-    @Path("findAll")
     @GET
+    @Path("findAll")
+    @Produces(MediaType.APPLICATION_JSON)
     public Response findAll() {
         TypedQuery<Operation> query = em.createNamedQuery("Operation.findAll", Operation.class);
         List<Operation> operations = query.getResultList();
@@ -27,6 +29,7 @@ public class OperationEndpoint {
 
     @GET
     @Path("{id}")
+    @Produces(MediaType.APPLICATION_JSON)
     public Response findById(@PathParam("id") long id) {
         Operation operation = em.find(Operation.class, id);
         if (operation == null) {
@@ -36,7 +39,7 @@ public class OperationEndpoint {
     }
 
     @DELETE
-    @Path("{id}")
+    @Path("/deleteOperation/{id}")
     public Response deleteById(@PathParam("id") long id) {
         Operation operation = em.find(Operation.class, id);
         if (operation == null) {

@@ -85,11 +85,11 @@ public class FeuerwehrDBTests {
             rs.next();
             rs.next();
             rs.next();
-            assertThat(rs.getInt("id"),is(5));
+            assertThat(rs.getInt("id"),is(7));
             assertThat(rs.getString("name"),is("Jonas Schürz"));
             assertThat(rs.getString("rank"),is("OFM"));
             rs.next();
-            assertThat(rs.getInt("id"),is(6));
+            assertThat(rs.getInt("id"),is(8));
             assertThat(rs.getString("name"),is("Alex Pichler"));
             assertThat(rs.getString("rank"),is("OFM"));
         } catch (SQLException e) {

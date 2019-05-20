@@ -3,6 +3,7 @@ package at.htl.rest;
 import org.junit.Before;
 import org.junit.Test;
 
+import javax.json.Json;
 import javax.json.JsonObject;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
@@ -99,11 +100,4 @@ public class FeuerwehrTests {
         Response response = tut.path("vehicle/deleteVehicle/1").request().delete();
         assertThat(response.getStatus(),is(500));
     }
-
-
-
-
-
-
-
 }

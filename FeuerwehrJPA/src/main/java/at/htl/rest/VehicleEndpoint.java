@@ -19,6 +19,7 @@ public class VehicleEndpoint {
 
     @Path("findAll")
     @GET
+    @Produces(MediaType.APPLICATION_JSON)
     public Response findAll() {
         TypedQuery<Vehicle> query = em.createNamedQuery("Vehicle.findAll", Vehicle.class);
         List<Vehicle> vehicles = query.getResultList();
@@ -27,6 +28,7 @@ public class VehicleEndpoint {
 
     @GET
     @Path("{id}")
+    @Produces(MediaType.APPLICATION_JSON)
     public Response findById(@PathParam("id") long id) {
         Vehicle vehicle = em.find(Vehicle.class, id);
         if (vehicle == null) {
@@ -36,7 +38,7 @@ public class VehicleEndpoint {
     }
 
     @DELETE
-    @Path("{id}")
+    @Path("/deleteVehicle/{id}")
     public Response deleteById(@PathParam("id") long id) {
         Vehicle vehicle = em.find(Vehicle.class, id);
         if (vehicle == null) {
